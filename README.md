@@ -1,11 +1,54 @@
-# AI-Powered Regulatory Intelligence Copilot
+### AI-Powered Regulatory Intelligence Copilot
 
 An enterprise Regulatory Intelligence Copilot designed for compliance officers, auditors, legal teams, and risk analysts within a global financial institution. The platform should help users understand regulations, map compliance requirements to banking processes, answer regulatory questions, generate compliance reports, and identify policy violations using AI-powered reasoning. The system must ingest financial regulations including Basel III, IFRS 9, FATF Guidelines, AML regulations, RBI guidelines, SEC policies, and internal compliance documents. Implement GraphRAG using Neo4j and Qdrant to establish relationships between regulations, compliance rules, banking products, customer types, risk categories, business processes, and internal policies. Build a multi-agent architecture using LangGraph with a Retrieval Agent, Regulatory Reasoning Agent, Compliance Mapping Agent, Citation Agent, Report Generation Agent, and Policy Analysis Agent. Users should be able to ask questions such as “Which regulations apply to corporate lending?”, “Which RBI guidelines govern suspicious transactions?”, “Generate a compliance checklist for onboarding high-risk customers,” and “Explain Basel III capital requirements.” The system should provide cited responses, reasoning chains, evidence references, and compliance recommendations. Use FastAPI, PostgreSQL, Neo4j, Redis, Qdrant, LangGraph, OpenAI GPT models, and Docker for local development. Build a modern React and TypeScript dashboard containing regulation search, compliance mapping tools, AI chat assistants, regulatory knowledge graphs, document exploration interfaces, policy management screens, and compliance report generation tools. Generate realistic regulatory datasets, graph schemas, API documentation, architecture diagrams, testing suites, and complete project documentation. The repository should resemble an internal compliance intelligence platform developed by a large investment bank while remaining entirely local and repository-focused without deployment infrastructure. 
 
 
 
+# High-Level Architecture
+┌─────────────────────────────────────────────────────────────┐
+│                     React Dashboard                         │
+│                                                             │
+│  Chat Assistant │ Compliance Mapping │ Reports │ Graph UI   │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     FastAPI Gateway                         │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        ▼                  ▼                  ▼
 
+┌──────────────┐  ┌────────────────┐  ┌──────────────────┐
+│ LangGraph AI │  │ Regulatory API │  │ Report Services  │
+│ Multi-Agent  │  │ Layer          │  │                  │
+└──────┬───────┘  └────────────────┘  └──────────────────┘
+       │
+       ▼
 
+┌─────────────────────────────────────────────────────────────┐
+│                    GraphRAG Layer                           │
+├─────────────────────────────────────────────────────────────┤
+│ Neo4j Graph Relationships                                  │
+│ Qdrant Vector Search                                       │
+│ PostgreSQL Metadata                                        │
+│ Redis Cache                                                │
+└─────────────────────────────────────────────────────────────┘
+
+       │
+       ▼
+
+┌─────────────────────────────────────────────────────────────┐
+│ Regulatory Corpus                                           │
+├─────────────────────────────────────────────────────────────┤
+│ Basel III                                                   │
+│ IFRS 9                                                      │
+│ FATF Guidelines                                              │
+│ RBI Circulars                                               │
+│ AML/KYC Regulations                                         │
+│ SEC Policies                                                │
+│ Internal Compliance Docs                                    │
+└─────────────────────────────────────────────────────────────┘
 
 
 
