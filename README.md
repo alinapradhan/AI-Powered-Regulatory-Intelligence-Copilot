@@ -7,7 +7,7 @@ infrastructure — good for prototyping and testing the architecture
 before wiring in real data sources.
 
 ## Install 
- 
+
 ```bash
 pip install -r requirements.txt --break-system-packages
 ```
