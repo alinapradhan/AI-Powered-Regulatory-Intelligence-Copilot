@@ -8,7 +8,6 @@ before wiring in real data sources.
 
 ## Install 
 
- 
 ```bash
 pip install -r requirements.txt --break-system-packages
 ```
